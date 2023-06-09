@@ -30,6 +30,17 @@ void sort(p *a,int n)
 	}
 }
 
+void Print(p *a,int n)
+{
+	for(int i =0;i<n;i++)
+	{
+		if(a[i].at > a[i-1].ct)
+		printf("||Idle(%d) %d",a[i].at-a[i-1].ct,a[i].at);
+		printf("||%d(%d) %d",a[i].pid,a[i].bt,a[i].ct);
+	}
+	printf("\n");
+}
+
 void CT(p*a,int n)
 {
 	int ct;
@@ -86,6 +97,9 @@ int main()
 	CT(a,n);
 	TT(a,n);
 	WT(a,n);
+	printf("Gnatt Chart \n");
+	Print(a,n);
+	printf("\n");
 	
 	printf("PID\tAT\tBT\tWT\tTT\tCT\n");
 	
